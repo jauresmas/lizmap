@@ -1,0 +1,22 @@
+# À copier à la racine du clone de 3liz/lizmap-docker-compose (à côté de docker-compose.yml).
+#
+# Lizmap utilise le PostgreSQL/PostGIS déjà installé sur Windows (port 5432)
+# au lieu du conteneur PostGIS fourni par le dépôt :
+#
+# - le service "postgis" ne démarre plus (son profil n'est jamais activé) ;
+# - "lizmap" ne l'attend plus au démarrage ;
+# - les connexions passent par host.docker.internal, déclaré dans
+#   lizmap/etc/pg_service.conf et lizmap/etc/profiles.d/lizmap_local.ini.php.
+#
+# Nécessite Docker Compose ≥ 2.24 pour l'étiquette !override.
+
+services:
+  lizmap:
+    depends_on: !override
+      redis:
+        condition: service_started
+      map:
+        condition: service_started
+
+  postgis:
+    profiles: ["postgis-embarque"]

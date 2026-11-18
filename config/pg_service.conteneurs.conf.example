@@ -1,0 +1,24 @@
+# Fichier de services PostgreSQL VU PAR LES CONTENEURS (Lizmap et QGIS Server).
+# Emplacement : <clone>/lizmap/etc/pg_service.conf (monté en /srv/etc/pg_service.conf).
+#
+# host.docker.internal = le PC Windows hôte, vu depuis un conteneur Docker Desktop.
+# Chaque nom de service doit exister AUSSI dans le pg_service.conf de QGIS Desktop
+# (avec host=localhost) : le projet QGIS ne contient que "service=...".
+#
+# Ce fichier contient des mots de passe : ne jamais le versionner.
+
+# Comptes, groupes et journaux de Lizmap
+[lizmap_local]
+host=host.docker.internal
+port=5432
+dbname=lizmap
+user=lizmap
+password=CHANGER_MOI
+
+# Une section par base publiée
+[cotonou_db]
+host=host.docker.internal
+port=5432
+dbname=cotonou_db
+user=lizmap
+password=CHANGER_MOI

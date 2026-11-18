@@ -1,0 +1,20 @@
+# Secrets et fichiers propres au poste : seuls les modèles *.example sont versionnés
+.env
+pg_service.conf
+.pg_service.conf
+pgpass.conf
+*.ini.php
+!*.ini.php.example
+
+# Projets QGIS générés et fichiers temporaires
+*.qgs~
+*.qgz~
+*.qgs.cfg.bak
+*_attachments.zip
+__pycache__/
+*.pyc
+
+# Système
+Thumbs.db
+desktop.ini
+.DS_Store

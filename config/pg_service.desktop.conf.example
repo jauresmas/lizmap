@@ -1,0 +1,15 @@
+# Fichier de services PostgreSQL VU PAR QGIS DESKTOP (Windows).
+#
+# Emplacement par défaut : %APPDATA%\postgresql\.pg_service.conf
+# ou le fichier désigné par la variable d'environnement PGSERVICEFILE
+# (vérifier dans PowerShell : [Environment]::GetEnvironmentVariable('PGSERVICEFILE','User')).
+#
+# Même nom de service que côté conteneurs, mais host=localhost.
+# Pas de mot de passe ici : il est lu dans %APPDATA%\postgresql\pgpass.conf
+# (ligne "localhost:5432:*:postgres:motdepasse"), ou demandé par QGIS.
+
+[cotonou_db]
+host=localhost
+port=5432
+dbname=cotonou_db
+user=postgres

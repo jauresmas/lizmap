@@ -1,0 +1,15 @@
+[jdb]
+lizlog=jauth
+
+; Comptes, groupes et journaux de Lizmap : base "lizmap" du PostgreSQL de Windows.
+; Emplacement : <clone>/lizmap/etc/profiles.d/lizmap_local.ini.php
+; Attention : configure.sh / configure.bat réécrit ce fichier (hôte db.lizmap).
+; Ne pas relancer la configuration après l'avoir modifié.
+[jdb:jauth]
+driver=pgsql
+host=host.docker.internal
+port=5432
+database=lizmap
+user=lizmap
+password="CHANGER_MOI"
+search_path=lizmap,public
